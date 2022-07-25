@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# React: from JS to Typescript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Starting with an existing project created by CRA, add the following modules and init `tsconfig.json` file:
 
-## Available Scripts
+```
+npx create-react-app from-js-to-ts
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+npx tsc --init
+```
 
-In the project directory, you can run:
+You might need to append the following lines to your tsconfig.json file:
 
-### `npm start`
+```
+{
+  "compilerOptions": {
+	(...)
+	"jsx": "react-jsx"
+},
+  "include": [
+	"./src/**/*.tsx",
+	"./src/**/*.ts",
+  ]
+}
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Now add the file `typings.d.ts` to your `./src` directory:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+declare module "*.module.css";
+```
 
-### `npm test`
+Now you should be good to go! You can create your TS and TSX files alongside your JS and JSX files.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Later, you might want to migrate your code to Typescript, and to increase the strictness of tsconfig.json, adding rules such as:
+- `"noImplicitAny": true`
+- `"strictNullChecks": true`
+- `"noImplicitThis": true`
+- `"alwaysStrict": true`
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Source:** [How to migrate a React app to Typescript?](https://archive.is/qIAdo)
