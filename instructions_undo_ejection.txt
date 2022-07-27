@@ -1,1 +1,4 @@
 https://stackoverflow.com/questions/51454729/undo-npm-run-eject-in-react
+
+The inclusion of SVG happens similarly to CSS modules:
+https://stackoverflow.com/questions/44717164/unable-to-import-svg-files-in-typescript
