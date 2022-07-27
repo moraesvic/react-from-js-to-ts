@@ -1,3 +1,5 @@
+import { PackageJsonDiff } from "./PackageJsonDiff";
+
 interface WhyProps {
   link: string;
 }
@@ -39,8 +41,16 @@ declare module "*.module.css";
       </p>
       {/* prettier-ignore */}
       <pre>
-		{stringRaw}
-	  </pre>
+        {stringRaw}
+      </pre>
+      <p>
+        Please note that your <code>package.json</code> file will still have a
+        lot of dependencies that were included by the ejection, as well as Jest
+        and Babel settings. Below you can see a full <code>diff</code> of a
+        fresh CRA install and an ejected CRA install. You can remove the lines
+        added, if your project does not rely on them anywhere else.
+      </p>
+      <PackageJsonDiff />
       <p>
         You might need to append the following lines to your{" "}
         <code>tsconfig.json</code> file:

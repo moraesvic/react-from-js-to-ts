@@ -1,0 +1,21 @@
+.diff p {
+	margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.diff p.header {
+	font-weight: 700;
+}
+
+.diff p.lineMarkup {
+	font-weight: 700;
+	color: rgb(0, 178, 178);
+}
+
+.diff p.addLine {
+	color: rgb(0, 160, 0);
+}
+
+.diff p.removeLine {
+	color: red;
+}

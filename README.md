@@ -8,6 +8,8 @@ npm install --save typescript @types/node @types/react @types/react-dom @types/j
 npx tsc --init
 ```
 
+Please note that your `package.json` file will still have a lot of dependencies that were included by the ejection, as well as Jest and Babel settings. You can see a full `diff` of a fresh CRA install and an ejected CRA install in `package_json_diff.txt`, at the root of the project.
+
 You might need to append the following lines to your tsconfig.json file:
 
 ```
